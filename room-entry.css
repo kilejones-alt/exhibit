@@ -1,0 +1,71 @@
+/* Quiet navigation; room art is the only transition graphic. */
+html.room-arriving {background:#000}
+html.room-arriving body {visibility:hidden}
+.room-transition {position:fixed;inset:0;z-index:2147483000;overflow:hidden;pointer-events:none}
+.room-departure {pointer-events:auto}
+.room-flight-art {position:absolute;overflow:hidden;transform-origin:center;will-change:transform,opacity}
+.room-flight-art img {display:block;width:100%;height:100%;object-fit:contain;object-position:center;max-width:none;transform-origin:center}
+.room-arrival {display:grid;place-items:center;background:#000;color:#f1eee8;padding:24px}
+.room-arrival-title {font-family:'Libre Caslon Display',Georgia,serif;font-size:clamp(2.6rem,7vw,5.5rem);line-height:1.05;text-align:center;opacity:0}
+html body.gallery-design h1[tabindex="-1"]:focus {outline:none!important}
+html body.gallery-design #main-content .era-card {padding-bottom:0!important}
+html body.gallery-design #main-content .era-arrow {display:none!important}
+html body.gallery-design .room-pill,
+html body.gallery-design .controls-nav a.room-pill {
+  display:inline-flex!important;align-items:center;justify-content:center;gap:10px;
+  min-height:40px!important;padding:8px 17px!important;box-sizing:border-box;
+  border:1px solid #494744!important;border-radius:999px!important;
+  background:transparent!important;color:#dedad3!important;box-shadow:none!important;
+  font:400 17px/1.2 var(--gallery-prose,'EB Garamond',Georgia,serif)!important;letter-spacing:0!important;
+  text-decoration:none!important;text-transform:none!important;white-space:nowrap;
+  transition:border-color .2s ease,color .2s ease!important;
+}
+html body.gallery-design #main-content .room-pill {margin-top:20px!important}
+html body.gallery-design #main-content .era-card:hover .room-pill,
+html body.gallery-design .room-pill:hover {border-color:#c4beb5!important;color:#fff!important}
+html body.gallery-design #main-content .era-card:focus-visible {outline:1px solid #e2ded7!important;outline-offset:8px!important}
+html body.gallery-design .controls-nav .nav-box:has(.room-pill) {padding:0!important}
+html body.gallery-design .statement-link.room-pill {margin-top:24px!important}
+@media(prefers-reduced-motion:reduce) {
+  html.room-arriving body {visibility:visible}
+  .room-transition {display:none!important}
+}
+
+/* One serif voice, with complete Hebrew and Cyrillic glyph coverage. */
+html[lang="he"] body.gallery-design {--gallery-prose:'Noto Serif Hebrew',serif;--exhibit-serif:'Noto Serif Hebrew',serif}
+html[lang="ru"] body.gallery-design {--exhibit-serif:'EB Garamond',Georgia,serif}
+html body.gallery-design .controls-nav :is(a,button),
+html body.gallery-design #museum-wayfinder :is(button,.museum-wayfinder-label) {
+  font-family:var(--gallery-prose,'EB Garamond',Georgia,serif)!important;
+  font-weight:400!important;letter-spacing:0!important;
+}
+html body.gallery-design .controls-nav :is(a,button) {font-size:16px!important;line-height:1.3!important}
+html body.gallery-design .controls-nav {flex-wrap:wrap!important;max-width:calc(100% - 240px)!important;row-gap:7px!important}
+html body.gallery-design .controls-nav .nav-box {flex-wrap:wrap!important}
+html[lang="he"] body.gallery-design :is(main p,main h1,main h2,main h3,main h4,main summary,.info-panel,.uniform-archive-copy) {direction:rtl;text-align:start!important;letter-spacing:0!important}
+html[lang="he"] body.gallery-design #main-content .era-title {text-align:center!important;font-size:clamp(1.2rem,2.5vw,2.4rem)!important}
+html[lang="he"] .room-arrival-title {font-family:'Noto Serif Hebrew',serif}
+html[lang="ru"] .room-arrival-title {font-family:'EB Garamond',Georgia,serif}
+@media(max-width:600px) {
+  html body.gallery-design .controls-nav {max-width:calc(100% - 32px)!important}
+  html body.gallery-design .controls-nav :is(a,button) {font-size:14px!important}
+  html body.gallery-design .room-pill {font-size:16px!important}
+  html body.gallery-design #main-content.home-main {padding-top:140px!important}
+}
+/* Leave a clear line for identity and allow translated controls to wrap naturally. */
+html body.gallery-design .controls-nav {top:24px!important;left:24px!important;right:auto!important;gap:8px 14px!important;align-items:center!important;transform:none!important;direction:ltr}
+html body.gallery-design .controls-nav .nav-box {padding:0!important;min-height:32px!important;height:auto!important;gap:8px!important}
+html body.gallery-design .controls-nav :is(a,button) {text-transform:none!important;min-height:32px!important;display:inline-flex;align-items:center}
+html body.gallery-design .controls-nav .third-era-nav-link::after {display:none!important}
+html body.gallery-design .site-brand-link {top:24px!important;right:24px!important;left:auto!important}
+@media(max-width:600px) {
+  html body.gallery-design .site-brand-link {top:20px!important;right:16px!important;left:auto!important;width:120px!important}
+  html body.gallery-design .controls-nav {top:54px!important;left:16px!important;right:auto!important;width:calc(100% - 32px)!important;max-width:none!important;gap:4px 12px!important}
+  html body.gallery-design #main-content.home-main {padding-top:160px!important}
+  html body.gallery-design #gallery .hero-section {padding-top:175px!important}
+}
+
+/* Compact music and language controls, with an accessible icon-only audio button. */
+html body.gallery-design .controls-nav {column-gap:9px!important}
+html body.gallery-design .controls-nav .nav-box {gap:6px!important}
+html body.gallery-design .controls-nav #audio-btn {font-size:20px!important;min-width:28px!important;justify-content:center;padding:0 3px!important}

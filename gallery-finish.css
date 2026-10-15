@@ -1,0 +1,140 @@
+/* The exhibition has its own identity: black walls, ivory type, restrained accents. */
+html:has(body.gallery-design) {background:#000!important;color-scheme:dark}
+html body.gallery-design {
+  --exhibit-bg:#000;--museum-bg:#000;--bg:#000;
+  --exhibit-ink:#f1eee8;--exhibit-muted:#aaa7a2;
+  --editorial-rule:rgba(241,238,232,.16);--exhibit-rule:rgba(241,238,232,.16);
+  --gallery-prose:'EB Garamond',Georgia,serif;
+  --exhibit-serif:'Libre Caslon Display',Georgia,serif;
+  background:#000!important;color:#f1eee8!important;
+}
+html body.gallery-design :is(main,.exhibition-footer) {background:#000!important}
+html body.gallery-design :is(#ambient-light,.third-era-hero-roman) {display:none!important}
+/* Keep controls readable as long captions scroll underneath. */
+html body.gallery-design::before {
+  content:""!important;display:block!important;position:fixed!important;
+  inset:0 0 auto!important;height:88px!important;
+  background:linear-gradient(#000 0%,#000 72%,transparent)!important;
+  opacity:1!important;z-index:1090!important;pointer-events:none!important;
+}
+html body.gallery-design .controls-nav {z-index:1100!important;background:transparent!important;box-shadow:none!important}
+html body.gallery-design .site-brand-link {z-index:1101!important}
+html body.gallery-design .site-brand {filter:grayscale(1) brightness(0) invert(1)!important;opacity:.85}
+html body.gallery-design .controls-nav :is(.nav-box,.lang-box,.home-btn,.audio-btn,button) {
+  background:transparent!important;box-shadow:none!important;border-color:transparent!important;
+}
+html body.gallery-design .controls-nav :is(a,button) {color:#bbb7b0!important}
+html body.gallery-design .controls-nav :is(a,button):hover,
+html body.gallery-design .controls-nav .active {color:#f1eee8!important}
+html body.gallery-design :is(.room-pill,.controls-nav a.room-pill) {
+  color:#dedad3!important;border-color:#494744!important;background:transparent!important;
+}
+html body.gallery-design .room-pill:hover {color:#fff!important;border-color:#c4beb5!important}
+html body.gallery-design :focus-visible {outline:2px solid #f1eee8!important;outline-offset:5px!important}
+html body.gallery-design main a {text-underline-offset:.22em;text-decoration-thickness:1px}
+html body.gallery-design #gallery :is(.naya-section-links a,.info-source-link) {color:#d1cdc7!important}
+html body.gallery-design #gallery :is(.hero-subtitle,.info-category,.info-meta,.art-caption-date,.naya-object-meta) {
+  color:#aaa7a2!important;font-family:var(--gallery-prose)!important;
+  font-size:1rem!important;line-height:1.5!important;letter-spacing:.02em!important;
+}
+html body.gallery-design #gallery .hero-section {padding-top:130px!important}
+html body.gallery-design #gallery .art-caption-inline {margin-bottom:28px!important}
+html body.gallery-design #gallery .uniform-archive-copy h3 {margin-bottom:24px!important}
+html body.gallery-design .exhibition-footer {border-top:1px solid var(--exhibit-rule)!important}
+html body.gallery-design #lightbox {background:rgba(0,0,0,.98)!important;color:#f1eee8!important}
+html body.gallery-design #lightbox[aria-hidden="true"] {visibility:hidden!important}
+html body.gallery-design #lightbox[aria-hidden="false"] {visibility:visible!important}
+html body.gallery-design #lightbox :is(button,.lightbox-caption,#lightbox-caption) {color:#f1eee8!important}
+/* Supporting exhibition pages share the same typography and reading space. */
+html body.gallery-design:is(.third-era-page,.overview-page) main :is(h1,h2,h3,h4,blockquote) {
+  font-family:var(--exhibit-serif)!important;font-weight:400!important;
+  color:#f1eee8!important;line-height:1.12!important;text-wrap:balance;
+}
+html body.gallery-design:is(.third-era-page,.overview-page) main :is(p,li) {
+  font-family:var(--gallery-prose)!important;font-size:clamp(1.15rem,1.6vw,1.3rem)!important;
+  line-height:1.65!important;color:#d1cdc7!important;letter-spacing:0!important;text-wrap:pretty;
+}
+html body.gallery-design:is(.third-era-page,.overview-page) :is(.prospectus-section,.streams-section,.stream-card,.overview-partnership,.third-era-hero) {
+  background:transparent!important;box-shadow:none!important;border-radius:0!important;
+}
+html body.gallery-design:is(.third-era-page,.overview-page) :is(.prospectus-copy,.overview-copy)>p {
+  max-width:68ch!important;margin:0 auto 2em!important;
+}
+html body.gallery-design:is(.third-era-page,.overview-page) main a {color:#f1eee8!important}
+html body.gallery-design .third-era-hero-rule {background:#74262d!important}
+html body.gallery-design .overview-main {padding-top:150px!important}
+html body.gallery-design.overview-page main :is(.overview-institution,.overview-kicker,.overview-location) {
+  font-size:.8rem!important;line-height:1.6!important;letter-spacing:.06em!important;
+  color:#aaa7a2!important;max-width:44ch;margin-inline:auto;
+}
+@media(max-width:600px) {
+  html body.gallery-design::before {height:132px!important}
+  html body.gallery-design #gallery .hero-section {padding-top:175px!important}
+  html body.gallery-design .overview-main {padding-top:160px!important}
+}
+
+/* Artwork rises into a soft gallery light; the camera moves evenly for five seconds. */
+@media (hover:hover) and (pointer:fine) {
+  html body.gallery-design :is(#gallery,#main-content) :is(.art-box,.uniform-archive-art,.era-image-wrap,.home-framework-art) {
+    filter:drop-shadow(0 0 0 transparent)!important;
+    transition:filter 1.2s ease,translate .8s ease!important;
+    translate:0 0;
+  }
+  html body.gallery-design :is(#gallery,#main-content) :is(.art-box,.uniform-archive-art,.era-image-wrap,.home-framework-art):is(:hover,:focus-visible),
+  html body.gallery-design #main-content .era-card:focus-visible .era-image-wrap {
+    filter:drop-shadow(0 0 18px rgba(241,238,232,.22))!important;
+  }
+}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  html body.gallery-design :is(#gallery,#main-content) img.gallery-zoom {
+    scale:1!important;
+    transform-origin:center!important;
+    transition:scale 5s linear!important;
+  }
+  html body.gallery-design :is(#gallery,#main-content) :is(.art-box,.uniform-archive-art,.era-image-wrap,.home-framework-art):is(:hover,:focus-visible),
+  html body.gallery-design #main-content .era-card:focus-visible .era-image-wrap {
+    translate:0 -4px;
+  }
+  html body.gallery-design :is(#gallery,#main-content) :is(.art-box,.uniform-archive-art,.era-image-wrap,.home-framework-art):is(:hover,:focus-visible) img.gallery-zoom,
+  html body.gallery-design #main-content .era-card:focus-visible img.gallery-zoom,
+  html body.gallery-design :is(#gallery,#main-content) img.gallery-zoom:hover {
+    scale:1.06!important;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  html body.gallery-design :is(#gallery,#main-content) :is(.art-box,.uniform-archive-art,.era-image-wrap,.home-framework-art) {
+    translate:none!important;transition:none!important;
+  }
+}
+
+/* The supplied framework follows the three era descriptions; credit belongs to the image. */
+html body.gallery-design .home-framework {width:min(760px,calc(100% - 48px));margin:64px auto 80px}
+html body.gallery-design .home-framework-art {display:block;background:transparent;overflow:visible}
+html body.gallery-design .home-framework-art img {display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+html body.gallery-design .home-framework figcaption {font-family:var(--gallery-prose,Georgia,serif);font-size:1rem;line-height:1.5;color:#aaa7a2;text-align:left;margin:36px 0 0}
+html[dir="rtl"] body.gallery-design .home-framework figcaption {text-align:right}
+@media(max-width:600px) {html body.gallery-design .home-framework {width:calc(100% - 32px);margin:40px auto 56px}}
+
+/* Matching frames use the tallest source ratio so all complete artworks fill the same width. */
+html body.gallery-design #main-content .era-card .era-image-wrap {
+  aspect-ratio:621 / 605!important;
+  background:#000!important;
+  overflow:visible!important;
+}
+html body.gallery-design #main-content .era-card .era-image-wrap .responsive-art-picture {
+  overflow:visible!important;
+}
+html body.gallery-design #main-content .era-card .era-image-wrap img.era-image {
+  object-fit:contain!important;
+  object-position:center!important;
+}
+
+/* Focused libel reading pages and unnumbered gallery navigation. */
+html body.gallery-design .era-structure-number,html body.gallery-design #museum-wayfinder {display:none!important}
+html body.gallery-design .libel-page-heading {width:min(850px,calc(100% - 48px));margin:150px auto 48px}
+html body.gallery-design .libel-page-heading h1 {font:400 clamp(2.6rem,6vw,5rem)/1.1 'Libre Caslon Display',Georgia,serif;color:#f1eee8;margin:28px 0}
+html body.gallery-design .libel-essay {width:min(850px,calc(100% - 48px));margin:0 auto 100px}
+html body.gallery-design .libel-essay p {font-family:var(--gallery-prose,Georgia,serif);font-size:clamp(1.2rem,2vw,1.5rem);line-height:1.7;margin:0 0 2em}
+@media(max-width:600px){html body.gallery-design .libel-page-heading {margin-top:175px}}
+
+html body.gallery-design :is(.libel-page-heading,.libel-essay) {width:min(760px,calc(100% - 48px));padding:0!important}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kilejones-alt.github.io/third-era-natasha-version/sitemap.xml
