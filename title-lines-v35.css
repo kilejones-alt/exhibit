@@ -1,0 +1,25 @@
+/* The line belongs to the text, so it ends at the lettering on every line. */
+.exhibition-title-line {
+  background-image:linear-gradient(currentColor,currentColor);
+  background-repeat:no-repeat;
+  background-position:50% calc(100% - .08em);
+  background-size:0% 1px;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
+  padding-bottom:.07em;
+  transition:background-size 1.8s ease-in-out;
+}
+@media(hover:hover) {
+  [data-title-line]:hover > .exhibition-title-line,
+  a:hover .exhibition-title-line,
+  summary:hover .exhibition-title-line { background-size:100% 1px; }
+}
+[data-title-line]:focus-visible > .exhibition-title-line,
+a:focus-visible .exhibition-title-line,
+summary:focus-visible .exhibition-title-line,
+[data-title-line]:active > .exhibition-title-line { background-size:100% 1px; }
+@media(prefers-reduced-motion:reduce) {
+  .exhibition-title-line { transition:none; }
+}
+
+body[data-page="home"] .home-hero h1 { padding-bottom:.2em!important; }
