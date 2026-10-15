@@ -1,0 +1,59 @@
+/* Approved STOPAZ navy/tangerine palette; existing gallery typefaces are preserved. */
+html:has(body.gallery-design) {background:#fff!important}
+html body.gallery-design {
+  --gallery-navy:#18233a; --gallery-orange:#f15a24;
+  --exhibit-bg:#fff; --museum-bg:#fff; --bg:#fff;
+  --exhibit-ink:#18233a; --exhibit-muted:#465064;
+  --editorial-rule:rgba(24,35,58,.2); --exhibit-rule:#f15a24;
+  background:#fff!important;color:#18233a!important;
+}
+html body.gallery-design :is(#gallery,#main-content) {background:#fff!important}
+html body.gallery-design :is(#gallery,#main-content) :is(h1,h2,h3,h4,.art-caption-title,p,summary) {color:#18233a!important}
+html body.gallery-design :is(#gallery,#main-content) :is(.info-category,.info-meta,.art-caption-date,.naya-object-meta,.museum-catalogue-key,.naya-verification) {color:#465064!important}
+html body.gallery-design :is(#gallery,#main-content) :is(.era-structure-kicker,.era-structure-number,.naya-kicker) {color:#b63d11!important}
+html body.gallery-design #gallery :is(.uniform-archive-details,.naya-archive-guide) {border-color:rgba(24,35,58,.2)!important}
+html body.gallery-design :is(#gallery,#main-content) :is(a,.naya-section-links a) {color:#18233a!important;text-decoration-color:#f15a24!important}
+html body.gallery-design :is(#gallery,#main-content) a:hover {color:#b63d11!important}
+/* White navigation, navy opening, and white reading rooms echo the approved reference. */
+html body.gallery-design::before {content:""!important;display:block!important;position:fixed!important;inset:0 0 auto!important;height:80px!important;background:#fff!important;opacity:1!important;z-index:1090!important;pointer-events:none!important}
+html body.gallery-design .controls-nav {z-index:1100!important}
+html body.gallery-design .site-brand-link {z-index:1101!important}
+html body.gallery-design .controls-nav {background:#fff!important;color:#18233a!important}
+html body.gallery-design .controls-nav :is(a,button,.home-btn,.audio-btn,.nav-box,.lang-box) {color:#18233a!important}
+html body.gallery-design .controls-nav :is(a,button):hover,
+html body.gallery-design .controls-nav .active {color:#b63d11!important}
+html body.gallery-design .site-brand {filter:brightness(0) saturate(100%)!important}
+html body.gallery-design .room-pill,
+html body.gallery-design .controls-nav a.room-pill {color:#18233a!important;border-color:#f15a24!important;background:#fff!important}
+html body.gallery-design .room-pill:hover {background:#f15a24!important;color:#18233a!important}
+html body.gallery-design :focus-visible {outline-color:#f15a24!important}
+html body.gallery-design #gallery .hero-section {background:#18233a!important;padding-top:130px!important}
+html body.gallery-design #gallery .hero-section :is(h1,h2,h3,p) {color:#fff!important}
+html body.gallery-design #gallery .hero-section :is(.hero-subtitle,.hero-location,.hero-city) {color:#f15a24!important}
+html body.gallery-design #main-content .home-intro {
+  background:#18233a!important;margin:0 -48px 28px!important;
+  padding:56px 48px 26px!important;border-bottom:5px solid #f15a24!important;
+}
+html body.gallery-design #main-content .home-title {color:#fff!important}
+html body.gallery-design #main-content .desktop-connector path {stroke:#f15a24!important}
+html body.gallery-design #main-content .desktop-connector circle {fill:#f15a24!important}
+/* All three supplied door artworks keep their full composition in equal frames. */
+html body.gallery-design #main-content .era-image-wrap {aspect-ratio:4/3!important;height:auto!important;overflow:hidden!important}
+html body.gallery-design #main-content .era-image-wrap .responsive-art-picture {display:block;width:100%;height:100%}
+html body.gallery-design #main-content .era-card .era-image,
+html body.gallery-design #main-content .era-card.antizionism .era-image {
+  position:static!important;inset:auto!important;width:100%!important;height:100%!important;
+  max-width:100%!important;max-height:100%!important;object-fit:contain!important;
+}
+html body.gallery-design #main-content .era-card .room-pill {margin-top:20px!important}
+html body.gallery-design #museum-wayfinder :is(.museum-wayfinder-toggle,.museum-wayfinder-panel) {background:#fff!important;border-color:#f15a24!important;color:#18233a!important}
+html body.gallery-design #museum-wayfinder :is(button,a,.museum-wayfinder-label) {color:#18233a!important}
+html body.gallery-design #museum-wayfinder .museum-progress-dot {background:#f15a24!important}
+html body.gallery-design #lightbox {background:#18233a!important;color:#fff!important}
+html body.gallery-design #lightbox :is(button,.lightbox-caption,#lightbox-caption) {color:#fff!important}
+html body.gallery-design .exhibition-footer {background:#fff!important;border-top:5px solid #f15a24!important}
+@media(max-width:600px) {
+  html body.gallery-design::before {height:108px!important}
+  html body.gallery-design #main-content .home-intro {margin:0 -20px 28px!important;padding:36px 20px 24px!important}
+  html body.gallery-design #gallery .hero-section {padding-top:175px!important}
+}
